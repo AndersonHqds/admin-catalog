@@ -1,5 +1,4 @@
 package com.fullcycle.admin.catalog.domain;
 
-public class Category {
-
+public abstract class ValueObject {
 }
