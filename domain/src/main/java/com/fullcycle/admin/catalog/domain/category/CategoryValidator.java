@@ -5,6 +5,8 @@ import com.fullcycle.admin.catalog.domain.validation.Validator;
 import com.fullcycle.admin.catalog.domain.validation.Error;
 
 public class CategoryValidator extends Validator {
+    public static final int NAME_MAX_LENGTH = 255;
+    public static final int NAME_MIN_LENGTH = 3;
     private final Category category;
     protected CategoryValidator(final Category aCategory, ValidationHandler aHandler) {
         super(aHandler);
@@ -26,7 +28,7 @@ public class CategoryValidator extends Validator {
             this.validationHandler().append(new Error("'name' should not be empty"));
             return;
         }
-        if(name.trim().length() > 255 || name.trim().length() < 3) {
+        if(name.trim().length() > NAME_MAX_LENGTH || name.trim().length() < NAME_MIN_LENGTH) {
             this.validationHandler().append(new Error("'name' must be between 3 and 255 characters"));
             return;
         }
