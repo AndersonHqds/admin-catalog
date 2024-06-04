@@ -1,0 +1,12 @@
+mysql:
+  username: root
+  password: 123456
+  schema: adm_videos
+  url: localhost:3306
+
+server:
+  port: 8080
+  undertow:
+    threads:
+      worker: 10 # Generally this should be reasonably high, at least 10 per CPU core
+      io: 2 # One IO Thread per CPU core is a reasonable default
