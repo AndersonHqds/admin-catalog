@@ -62,7 +62,7 @@ public class CategoryJpaEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "description", length = 4000, nullable = false)
+    @Column(name = "description", length = 4000)
     private String description;
 
     @Column(name = "active", nullable = false)
@@ -70,6 +70,12 @@ public class CategoryJpaEntity {
 
     @Column(name = "created_at", nullable = false, columnDefinition = "DATETIME(6)")
     private Instant createdAt;
+
+    @Column(name = "updated_at", nullable = false, columnDefinition = "DATETIME(6)")
+    private Instant updatedAt;
+
+    @Column(name = "deleted_at", columnDefinition = "DATETIME(6)")
+    private Instant deletedAt;
 
     public String getId() {
         return id;
@@ -129,9 +135,5 @@ public class CategoryJpaEntity {
         this.deletedAt = deletedAt;
     }
 
-    @Column(name = "updated_at", nullable = false, columnDefinition = "DATETIME(6)")
-    private Instant updatedAt;
 
-    @Column(name = "deleted_at", columnDefinition = "DATETIME(6)")
-    private Instant deletedAt;
 }
